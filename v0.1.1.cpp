@@ -15,10 +15,16 @@ int main(){
 
     cout << "Iveskite studentu skaiciu ";
     cin >> k;
-    if(k == 0) cout << "Ivedete studentu skaiciu 0, perkraukite programa";
+    if(k == 0){
+    cout << "Ivedete studentu skaiciu 0, perkraukite programa";
+    return 0;
+    }
     else cout << "Iveskite namu darbu skaiciu ";
     cin >> nd;
-    if(nd == 0) cout << "Ivedete namu darbu skaiciu 0, perkraukite programa" << endl;
+    if(nd == 0){ 
+    cout << "Ivedete namu darbu skaiciu 0, perkraukite programa" << endl;
+    return 0;
+    }
     for(int i=0; i<k; i++){
         cout << "Iveskite studento varda: ";
         cin >> vardas[i];
@@ -26,12 +32,28 @@ int main(){
         cin >> pavarde[i]; 
         ndsum[i] = 0;
         for(int j=0; j<nd; j++){
-        cout << "Iveskite " << nd << " namu darbu rezultatus" << endl;
+        cout << "Iveskite " << nd << " namu darbu rezultatus ";
         cin >> x;
+         if(cin.fail())
+            {
+                cout << "Netinkamas pazymys. (Naudokite skaitmenis). Pakartokite: ";
+                j--;
+                cin.clear();
+                cin.ignore();
+                continue;
+            }
         ndsum[i] += x;
         }
-        cout << "Iveskite egzamino rezultata" << endl;
+        cout << "Iveskite egzamino rezultata ";
         cin >> egz[i];
+        if(cin.fail())
+            {
+                cout << "Netinkamas pazymys. (Naudokite skaitmenis). Pakartokite: ";
+                i--;
+                cin.clear();
+                cin.ignore();
+                continue;
+            }
     }
     cout << "Pavardė             " << "Vardas              " << "Galutinis (Vid.) " << endl;
     cout << "----------------------------------------------------------" << endl;
