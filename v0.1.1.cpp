@@ -35,7 +35,6 @@ int main()
             cout << "Ivedete studentu skaiciu 0, perkraukite programa";
             return 0;
         }
-        else
             cout << "Iveskite namu darbu skaiciu vienam studentui ";
         cin >> nd;
         if (nd == 0)
@@ -43,7 +42,7 @@ int main()
             cout << "Ivedete namu darbu skaiciu 0, perkraukite programa" << endl;
             return 0;
         }
-        cout << "Ar norite generuoti atsitiktines pazymiu reiksmes? (Taip/Ne)";
+        cout << "Ar norite generuoti atsitiktines pazymiu reiksmes? (Taip/Ne) ";
         cin >> ats2;
 
         if (ats2 == "Taip")
@@ -112,7 +111,6 @@ int main()
                 }
             }
         }
-
         cout << "Ar norite naudoti mediana? (Taip/Ne) ";
         cin >> mediana;
         if (mediana == "Ne")
@@ -147,7 +145,8 @@ int main()
         }
     }
     //------------------------------------------------------------------------------------------------------------------------------------
-    else
+    if(ats == "Taip")
+    {
     {
         cout << "Nuo siol, po kiekvieno studento galite baigti pildyti duomenis: " << endl;
         cout << "Iveskite namu darbu skaiciu vienam studentui ";
@@ -157,7 +156,7 @@ int main()
             cout << "Ivedete negalima namu darbu skaiciu, perkraukite programa" << endl;
             return 0;
         }
-        cout << "Ar norite generuoti atsitiktines pazymiu reiksmes? (Taip/Ne)";
+        cout << "Ar norite generuoti atsitiktines pazymiu reiksmes? (Taip/Ne) ";
         cin >> ats2;
         if (ats2 == "Taip")
         {
@@ -184,6 +183,7 @@ int main()
                         break;
                     }
             }
+        }
             //------------------------------------------------------------------------------------------------------------------------------------
             if (ats2 == "Ne")
             {
@@ -273,7 +273,13 @@ int main()
                     cout << setw(20) << left << pavarde[i] << setw(20) << left << vardas[i] << setw(19) << fixed << setprecision(2) << ((ndsum[i] / nd) * 0.4) + egz[i] * 0.6 << endl;
                 }
             }
-        }
+        delete [] vardas;
+        delete [] pavarde;
+        delete [] ndsum;
+        delete [] egz;
+        delete [] ndrezult;
+        delete [] medianos;
         return 0;
     }
+}
 }
