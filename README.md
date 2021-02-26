@@ -20,7 +20,7 @@ Norint pasinaudoti šia programa, Jums reikia parsisiųsti failą v0.1.2.cpp ir 
 ### V0.2
 ### Kaip paleisti programą?<br>
 Versijoje [v0.2](https://github.com/domastyd/Pazymys/blob/v0.2/v0.2.cpp) yra naudojami vector tipo konteineriai ir struktūros, kurie paspartina programos veiklą.  
-Norint pasinaudoti šia programa, Jums reikia parsisiųsti failą v0.2.cpp ir įsijungti terminal. Su komanda cd nueiti iki savo v0.2.cpp failo ir įrašyti "g++ -o main v0.2.cpp" komandą ir kai programa bus sukompiliuota, įrašyti "main.cpp" arba "./main".
+Norint pasinaudoti šia programa, Jums reikia parsisiųsti failą v0.2.cpp, įsikelti txt duomenų failą kartu su v0.2 failu ir įsijungti terminal. Su komanda cd nueiti iki savo v0.2.cpp failo ir įrašyti "g++ -o main v0.2.cpp" komandą ir kai programa bus sukompiliuota, įrašyti "main.cpp" arba "./main".
 
 ### Paleidus programą Jums reikės:<br>
 - Pasirinkti ar norite skaityti duomenis iš failo arba duomenis įvesti rankiniu būdu.
