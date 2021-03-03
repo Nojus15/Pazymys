@@ -29,9 +29,9 @@ extern string ats1;                 // ar norite itraukti dar viena studenta?
 extern string ats2;                 // ar norite generuoti atsitiktines pazymiu reiksmes?
 extern string ats3;                 // ar norite matyti medianas?
 extern int nd;                      // namu darbu skaicius
-extern int k = 0;                   // stduentu skaicius
-extern int x = 0;                   // laikinas studento pazymiu nuskaitymo skaitliukas
-extern int max = 10;         // pazymiu generavimui maksimali reiksme
+extern int k;             // studentu skaicius
+extern int x;                 // laikinas studento pazymiu nuskaitymo skaitliukas
+extern int max;        // pazymiu generavimui maksimali reiksme
 extern vector<int> pazymiai;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
 extern string FailoPavadinimas;
 extern string ats4;
