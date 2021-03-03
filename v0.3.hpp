@@ -1,5 +1,6 @@
 #ifndef V03_HPP
 #define v03_HPP
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -22,19 +23,19 @@ struct Studentas
     }
 };
 
-vector<Studentas> Studentai; // studentu struktura vektoriuose
-string ats;                  // ar norite patys ivesti duomenis?
-string ats1;                 // ar norite itraukti dar viena studenta?
-string ats2;                 // ar norite generuoti atsitiktines pazymiu reiksmes?
-string ats3;                 // ar norite matyti medianas?
-int nd;                      // namu darbu skaicius
-int k = 0;                   // stduentu skaicius
-int x = 0;                   // laikinas studento pazymiu nuskaitymo skaitliukas
-static int max = 10;         // pazymiu generavimui maksimali reiksme
-vector<int> pazymiai;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
-string FailoPavadinimas;
-string ats4;
-int z;
+extern vector<Studentas> Studentai; // studentu struktura vektoriuose
+extern string ats;                  // ar norite patys ivesti duomenis?
+extern string ats1;                 // ar norite itraukti dar viena studenta?
+extern string ats2;                 // ar norite generuoti atsitiktines pazymiu reiksmes?
+extern string ats3;                 // ar norite matyti medianas?
+extern int nd;                      // namu darbu skaicius
+extern int k = 0;                   // stduentu skaicius
+extern int x = 0;                   // laikinas studento pazymiu nuskaitymo skaitliukas
+extern int max = 10;         // pazymiu generavimui maksimali reiksme
+extern vector<int> pazymiai;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
+extern string FailoPavadinimas;
+extern string ats4;
+extern int z;
 
 double MedianosRadimas(vector<int> &pazymiai);
 void ZinomasDuomenuSkaicius();

@@ -1,4 +1,5 @@
 #include "v0.3.hpp"
+#pragma once
 
 int main()
 {
