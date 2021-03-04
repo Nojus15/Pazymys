@@ -19,7 +19,7 @@ Norint pasinaudoti šia programa, Jums reikia parsisiųsti failą v0.1.2.cpp ir 
 
 ### V0.2
 ### Kaip paleisti programą?<br>
-Versijoje [v0.2](https://github.com/domastyd/Pazymys/blob/v0.2/v0.2.cpp) yra naudojami vector tipo konteineriai ir struktūros, kurie paspartina programos veiklą.  
+Versijoje [v0.2](https://github.com/domastyd/Pazymys/releases/tag/v0.2) yra naudojami vector tipo konteineriai ir struktūros, kurie paspartina programos veiklą.  
 Norint pasinaudoti šia programa, Jums reikia parsisiųsti failą v0.2.cpp, įsikelti txt duomenų failą kartu su v0.2 failu ir įsijungti terminal. Su komanda cd nueiti iki savo v0.2.cpp failo ir įrašyti "g++ -o main v0.2.cpp" komandą ir kai programa bus sukompiliuota, įrašyti "main.cpp" arba "./main".
 
 ### Paleidus programą Jums reikės:<br>
@@ -39,7 +39,7 @@ Norint pasinaudoti šia programa, Jums reikia parsisiųsti failą v0.2.cpp, įsi
 
 ### V0.3
 ### Kaip paleisti programą?<br>
-Versijoje [v0.3](https://github.com/domastyd/Pazymys/blob/v0.3/v0.3.cpp) yra naudojami vector tipo konteineriai ir struktūros, kurie paspartina programos veiklą. Taip pat trečioje programos versijoje yra naudojami header failai. Pridėti klaidų tikrinimo atnaujinimai, "try catches".
+Versijoje [v0.3](https://github.com/domastyd/Pazymys/releases/tag/v0.3) yra naudojami vector tipo konteineriai ir struktūros, kurie paspartina programos veiklą. Taip pat trečioje programos versijoje yra naudojami header failai. Pridėti klaidų tikrinimo atnaujinimai, "try catches".
 Norint pasinaudoti šia programa, Jums reikia parsisiųsti failus v0.3.cpp, v0.3_functions.cpp, v0.3.hpp ir makefile. Taip pat įsikelti txt duomenų failą kartu su visais parsisiųstais failais ir įsijungti terminal. Su komanda cd nueiti iki savo aplankalo, kuriame yra visi parsisiųsti failai ir įrašyti "mingw32-make main" komandą ir kai programa bus sukompiliuota, įrašyti "Output.cpp" arba "./Output.exe".
 
 ### Paleidus programą Jums reikės:<br>
