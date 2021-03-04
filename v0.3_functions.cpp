@@ -240,7 +240,9 @@ void NezinomasDuomenuSkaicius()
 
 void DuomenysIsFailo()
 {
+    try{
     ifstream in(FailoPavadinimas);
+    in.exceptions(ifstream::failbit | ifstream::badbit);
     string x; // nustatyti nd skaiciu
     int y;
     for (int i = 0; i < 1000; i++)
@@ -271,5 +273,10 @@ void DuomenysIsFailo()
         Studentai[i].egz = egzaminorez;
         k++; // studentu skaicius
     }
-   in.close();
+    in.close();
+    }
+    catch(exception ex){
+        cout << "Toks failas neegzistuoja!" << endl;
+        exit(1);
+    }
 }
