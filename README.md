@@ -37,3 +37,23 @@ Norint pasinaudoti šia programa, Jums reikia parsisiųsti failą v0.2.cpp, įsi
 (Pažymių mediana sudaroma vadovaujantis šia formule: mediana = 0.4 * pažymių mediana + 0.6 * egzaminas)<br>
 ### Pasirinkus šiuos nustatymus matysite sudarytą lentelę su studentu pavardėmis, vardais ir pažymių vidurkiais ir/arba medianomis.
 
+### V0.3
+### Kaip paleisti programą?<br>
+Versijoje [v0.3](https://github.com/domastyd/Pazymys/blob/v0.3/v0.3.cpp) yra naudojami vector tipo konteineriai ir struktūros, kurie paspartina programos veiklą. Taip pat trečioje programos versijoje yra naudojami header failai. Pridėti klaidų tikrinimo atnaujinimai, "try catches".
+Norint pasinaudoti šia programa, Jums reikia parsisiųsti failus v0.3.cpp, v0.3_functions.cpp, v0.3.hpp ir makefile. Taip pat įsikelti txt duomenų failą kartu su visais parsisiųstais failais ir įsijungti terminal. Su komanda cd nueiti iki savo aplankalo, kuriame yra visi parsisiųsti failai ir įrašyti "mingw32-make main" komandą ir kai programa bus sukompiliuota, įrašyti "Output.cpp" arba "./Output.exe".
+
+### Paleidus programą Jums reikės:<br>
+- Pasirinkti ar norite skaityti duomenis iš failo arba duomenis įvesti rankiniu būdu.
+- Pasirinkus duomenis skaityti iš failo jums reikės pasirinkti ar norite matyti medianą, ar vidurkį.
+- Jeigu pasirinkote įvesti duomenis rankiniu būdu - pasirinkti ar norite įvesti fiksuotą duomenų skaičių, ar turėti galimybę baigti įvesti studentus duomenų įvedimo metu.<br>
+- Jeigu pasirenkate įvesti fiksuotą duomenų skaičių, turėsite pasirinkti studentų skaičių, bei namų darbų kiekį skirtą vienam studentui.<br>
+- Jeigu pasirenkate baigti įvesti duomenys duomenų įvedimo metu, Jūs turėsite pasirinkti namų darbų kiekį skirtą vienam studentui.<br>
+- Įvedę šiuos duomenis, turėsite pasirinkti ar norite matyti automatiškai sugeneruotus studentų pažymius arba pažymius įvesti patys.<br>
+- Pasirinke matyti automatiškai sugeneruotus duomenis, turėsite įvesti studentų vardus ir pavardes.<br>
+- Pasirinkus įvesti duomenis patiems, turėsite įvesti šįuos duomenis: studentų vardus, pavardes, jų namų darbų pažymius ir egzamino pažymį).<br>
+- Tada Jums reikės pasirinkti ar norite matyti studentų pažymių medianas.<br>
+
+(Pažymių vidurkis sudaromis vadovaujantis šia formule: galutinis = 0.4 * vidurkis + 0.6 * egzaminas)<br>
+(Pažymių mediana sudaroma vadovaujantis šia formule: mediana = 0.4 * pažymių mediana + 0.6 * egzaminas)<br>
+### Pasirinkus šiuos nustatymus matysite sudarytą lentelę su studentu pavardėmis, vardais ir pažymių vidurkiais ir/arba medianomis.
+
