@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <random>
 
 using namespace std;
 
@@ -24,6 +25,8 @@ struct Studentas
 };
 
 extern vector<Studentas> Studentai; // studentu struktura vektoriuose
+extern vector<Studentas> Kietuoliai;
+extern vector<Studentas> Vargsiukai;
 extern string ats;                  // ar norite patys ivesti duomenis?
 extern string ats1;                 // ar norite itraukti dar viena studenta?
 extern string ats2;                 // ar norite generuoti atsitiktines pazymiu reiksmes?
@@ -31,14 +34,18 @@ extern string ats3;                 // ar norite matyti medianas?
 extern int nd;                      // namu darbu skaicius
 extern int k;             // studentu skaicius
 extern int x;                 // laikinas studento pazymiu nuskaitymo skaitliukas
-extern int max;        // pazymiu generavimui maksimali reiksme
 extern vector<int> pazymiai;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
 extern string FailoPavadinimas;
 extern string ats4;
+extern string ats5;
 extern int z;
+extern int v;
+extern int vsum; // vargsiuku suma
+extern int ksum; // kieteku suma
 
 double MedianosRadimas(vector<int> &pazymiai);
 void ZinomasDuomenuSkaicius();
 void NezinomasDuomenuSkaicius();
 void DuomenysIsFailo();
+void Generavimas(int z, int v);
 #endif

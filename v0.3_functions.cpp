@@ -1,18 +1,23 @@
 #include "v0.3.hpp"
 
 vector<Studentas> Studentai; // studentu struktura vektoriuose
-string ats;                  // ar norite patys ivesti duomenis?
-string ats1;                 // ar norite itraukti dar viena studenta?
-string ats2;                 // ar norite generuoti atsitiktines pazymiu reiksmes?
-string ats3;                 // ar norite matyti medianas?
-int nd;                      // namu darbu skaicius
-int k = 0;             // studentu skaicius
-int x = 0;                 // laikinas studento pazymiu nuskaitymo skaitliukas
-int max = 10;        // pazymiu generavimui maksimali reiksme
-vector<int> pazymiai;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
+vector<Studentas> Kietuoliai;
+vector<Studentas> Vargsiukai;
+string ats;           // ar norite patys ivesti duomenis?
+string ats1;          // ar norite itraukti dar viena studenta?
+string ats2;          // ar norite generuoti atsitiktines pazymiu reiksmes?
+string ats3;          // ar norite matyti medianas?
+int nd;               // namu darbu skaicius
+int k = 0;            // studentu skaicius
+int x = 0;            // laikinas studento pazymiu nuskaitymo skaitliukas
+vector<int> pazymiai; // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
 string FailoPavadinimas;
 string ats4;
+string ats5;
 int z;
+int v;
+int vsum = 0; // vargsiuku suma
+int ksum = 0; // kieteku suma
 
 double MedianosRadimas(vector<int> &pazymiai)
 {
@@ -26,6 +31,10 @@ double MedianosRadimas(vector<int> &pazymiai)
 }
 void ZinomasDuomenuSkaicius()
 {
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_int_distribution<int> dist(0, 10);
+
     cout << "Iveskite studentu skaiciu ";
     cin >> k;
     if (k == 0)
@@ -60,11 +69,11 @@ void ZinomasDuomenuSkaicius()
             pazymiai.clear();
             for (int j = 0; j < nd; j++)
             {
-                x = rand() % 10 + 1; // sugeneruoja random skaiciu nuo 1 iki 10
+                x = dist(mt); // sugeneruoja random skaiciu nuo 1 iki 10
                 Studentai[i].ndsum += x;
                 pazymiai.push_back(x);
             }
-            Studentai[i].egz = (rand() % 10 + 1); // sugeneruoja random skaiciu nuo 1 iki 10
+            Studentai[i].egz = dist(mt); // sugeneruoja random skaiciu nuo 1 iki 10
             Studentai[i].medianos = (MedianosRadimas(pazymiai));
         }
     }
@@ -127,6 +136,9 @@ void ZinomasDuomenuSkaicius()
 }
 void NezinomasDuomenuSkaicius()
 {
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_int_distribution<int> dist(0, 10);
     cout << "Nuo siol, po kiekvieno studento galite baigti pildyti duomenis: " << endl;
     cout << "Iveskite namu darbu skaiciu vienam studentui ";
     cin >> nd;
@@ -153,12 +165,12 @@ void NezinomasDuomenuSkaicius()
 
             for (int j = 0; j < nd; j++)
             {
-                x = rand() % 10 + 1; // sugeneruoja random skaiciu nuo 1 iki 10
+                x = dist(mt); // sugeneruoja random skaiciu nuo 1 iki 10
                 Studentai[i].ndsum += x;
                 pazymiai.push_back(x);
             }
             Studentai[i].medianos = (MedianosRadimas(pazymiai));
-            Studentai[i].egz = (rand() % 10 + 1); // sugeneruoja random skaiciu nuo 1 iki 10
+            Studentai[i].egz = dist(mt); // sugeneruoja random skaiciu nuo 1 iki 10
             k++;
             cout << "Ar norite itraukti dar viena studenta? (Taip/Ne) ";
             cin >> ats1;
@@ -240,43 +252,99 @@ void NezinomasDuomenuSkaicius()
 
 void DuomenysIsFailo()
 {
-    try{
-    ifstream in(FailoPavadinimas);
-    in.exceptions(ifstream::failbit | ifstream::badbit);
-    string x; // nustatyti nd skaiciu
-    int y;
-    for (int i = 0; i < 1000; i++)
+    try
     {
-        in >> x;
-        if (x == "Egz.")
+        ifstream in(FailoPavadinimas);
+        in.exceptions(ifstream::failbit | ifstream::badbit);
+        string x; // nustatyti nd skaiciu
+        int y;
+        for (int i = 0; i < 1000; i++)
         {
-            nd = i - 2;
-            break;
+            in >> x;
+            if (x == "Egz.")
+            {
+                nd = i - 2;
+                break;
+            }
         }
+        for (int i = 0; !in.eof(); i++)
+        {
+            Studentai.push_back(Studentas());
+            in >> Studentai[i].vardas;
+            in >> Studentai[i].pavarde;
+            Studentai[i].ndsum = 0;
+            pazymiai.clear();
+            for (int j = 0; j < nd; j++)
+            {
+                in >> y;
+                pazymiai.push_back(y);
+                Studentai[i].ndsum += y;
+            }
+            Studentai[i].medianos = (MedianosRadimas(pazymiai));
+            double egzaminorez;
+            in >> egzaminorez;
+            Studentai[i].egz = egzaminorez;
+            k++; // studentu skaicius
+        }
+        in.close();
     }
-    for (int i = 0; !in.eof(); i++)
+    catch (exception ex)
     {
-        Studentai.push_back(Studentas());
-        in >> Studentai[i].vardas;
-        in >> Studentai[i].pavarde;
-        Studentai[i].ndsum = 0;
-        pazymiai.clear();
-        for (int j = 0; j < nd; j++)
-        {
-            in >> y;
-            pazymiai.push_back(y);
-            Studentai[i].ndsum += y;
-        }
-        Studentai[i].medianos = (MedianosRadimas(pazymiai));
-        double egzaminorez;
-        in >> egzaminorez;
-        Studentai[i].egz = egzaminorez;
-        k++; // studentu skaicius
-    }
-    in.close();
-    }
-    catch(exception ex){
         cout << "Toks failas neegzistuoja!" << endl;
         exit(1);
     }
+}
+void StudentuSkirstymasPagalMediana()
+{
+    for (int i = 0; i < z; i++)
+    {
+        if (Studentai[i].medianos * 0.4 + Studentai[i].egz * 0.6 >= 5){
+            Kietuoliai.push_back(Studentai[i]);
+            ksum++;
+        }
+        else{
+            Vargsiukai.push_back(Studentai[i]);
+            vsum++;
+        }
+    }
+}
+void StudentuSkirstymasPagalVidurki()
+{
+    for (int i = 0; i < z; i++)
+    {
+        if (((Studentai[i].ndsum / nd) * 0.4) + Studentai[i].egz * 0.6 >= 5){
+            Kietuoliai.push_back(Studentai[i]);
+            ksum++;
+        }
+        else{
+            Vargsiukai.push_back(Studentai[i]);
+            vsum++;
+        }
+    }
+}
+void Generavimas(int z, int v)
+{
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_int_distribution<int> dist(0, 10);
+
+    ofstream out("studentai" + to_string(z) + ".txt");
+    out << fixed << setw(25) << left << "Vardas" << setw(25) << "Pavarde";
+    for (int i = 1; i <= v; i++)
+        out << fixed << setw(10) << left << "ND" + to_string(i);
+    out << "Egz." << endl;
+
+    for (int i = 0; i <= z; i++)
+    {
+        out << fixed << setw(25) << left << "Vardas" + to_string(i) << setw(25) << "Pavarde" + to_string(i);
+        for (int j = 0; j < v; j++)
+        {
+            out << fixed << setw(10) << left << dist(mt); // sugeneruoja random skaiciu nuo 1 iki 10
+        }
+        if(i==z)
+        out << dist(mt); // sugeneruoja random skaiciu nuo 1 iki 10
+        else
+        out << dist(mt) << endl; // sugeneruoja random skaiciu nuo 1 iki 10
+    }
+    out.close();
 }
