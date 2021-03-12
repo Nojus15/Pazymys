@@ -4,6 +4,7 @@ int main()
 {
     cout << "Ar norite automatiskai generuoti duomenis failui? (Taip/Ne) ";
     cin >> ats5;
+    duration<double> diff;
     if (ats5 == "Taip")
     {
         {
@@ -11,7 +12,10 @@ int main()
             cin >> z;
             cout << "Iveskite namu darbu skaiciu" << endl;
             cin >> v;
+            auto start = system_clock::now();
             Generavimas(z, v);
+            auto end = system_clock::now();
+            diff = end - start;
             cout << "Ar norite testi programa? (Taip/Ne) ";
             cin >> ats4;
             if (ats4 == "Ne")
@@ -28,7 +32,10 @@ int main()
         cout << "Iveskite studentu skaiciu faile ";
         cin >> z;
         FailoPavadinimas = "studentai" + to_string(z) + ".txt";
+        auto start = system_clock::now();
         DuomenysIsFailo();
+        auto end = system_clock::now();
+        duration<double> diff1 = end - start;
         sort(Studentai.begin(), Studentai.end());
         cout << "Ar norite surusiuoti studentus pagal vidurki (V), ar mediana (M)? ";
         cin >> ats3;
@@ -36,9 +43,13 @@ int main()
         ofstream out1("kietuoliai.txt");
         if (ats3 == "M")
         {
-            void StudentuSkirstymasPagalMediana();
+            auto start = system_clock::now();
+            StudentuSkirstymasPagalMediana();
+            auto end = system_clock::now();
+            duration<double> diff2 = end - start;
             sort(Kietuoliai.begin(), Kietuoliai.end());
             sort(Vargsiukai.begin(), Vargsiukai.end());
+            auto start1 = system_clock::now();
             out << "Pavarde             "
                 << "Vardas              "
                 << "Galutinis (Med.) " << endl;
@@ -56,12 +67,23 @@ int main()
             {
                 out1 << setw(20) << left << Kietuoliai[i].pavarde << setw(20) << left << Kietuoliai[i].vardas << setw(19) << fixed << setprecision(0) << setw(5) << Kietuoliai[i].medianos * 0.4 + Kietuoliai[i].egz * 0.6 << endl;
             }
+            auto end1 = system_clock::now();
+            duration<double> diff3 = end1 - start1;
+            cout << "Failas (studentai" + to_string(z) + ".txt) buvo sukurtas per: " << diff.count() << " sekundes" << endl;
+            cout << "Failo (studentai" + to_string(z) + ".txt) duomenys buvo nuskaityti per:  " << diff1.count() << " sekundes" << endl;
+            cout << "Failo (studentai" + to_string(z) + ".txt) studentai buvo suskirstyti per:  " << diff2.count() << " sekundes" << endl;
+            cout << "Failo (studentai" + to_string(z) + ".txt) suriuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiuokai.txt) per:  " << diff3.count() << " sekundes" << endl;
+
         }
         if (ats3 == "V")
         {
-            void StudentuSkirstymasPagalVidurki();
+            auto start = system_clock::now();
+            StudentuSkirstymasPagalVidurki();
+            auto end = system_clock::now();
+            duration<double> diff2 = end - start;
             sort(Kietuoliai.begin(), Kietuoliai.end());
             sort(Vargsiukai.begin(), Vargsiukai.end());
+            auto start1 = system_clock::now();
             out << "Pavarde             "
                 << "Vardas              "
                 << "Galutinis (Vid.) " << endl;
@@ -79,6 +101,12 @@ int main()
             {
                 out1 << setw(20) << left << Kietuoliai[i].pavarde << setw(20) << left << Kietuoliai[i].vardas << setw(19) << fixed << setprecision(0) << ((Kietuoliai[i].ndsum / nd) * 0.4) + Kietuoliai[i].egz * 0.6 << endl;
             }
+            auto end1 = system_clock::now();
+            duration<double> diff3 = end1 - start1;
+            cout << "Failas (studentai" + to_string(z) + ".txt) buvo sukurtas per: " << diff.count() << " sekundes" << endl;
+            cout << "Failo (studentai" + to_string(z) + ".txt) duomenys buvo nuskaityti per:  " << diff1.count() << " sekundes" << endl;
+            cout << "Failo (studentai" + to_string(z) + ".txt) studentai buvo suskirstyti per:  " << diff2.count() << " sekundes" << endl;
+            cout << "Failo (studentai" + to_string(z) + ".txt) suriuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiuokai.txt) per:  " << diff3.count() << " sekundes" << endl;
         }
         out.close();
         out1.close();

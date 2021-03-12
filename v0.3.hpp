@@ -8,8 +8,10 @@
 #include <vector>
 #include <string>
 #include <random>
+#include <chrono>
 
 using namespace std;
+using namespace chrono;
 
 struct Studentas
 {
@@ -48,4 +50,6 @@ void ZinomasDuomenuSkaicius();
 void NezinomasDuomenuSkaicius();
 void DuomenysIsFailo();
 void Generavimas(int z, int v);
+void StudentuSkirstymasPagalMediana();
+void StudentuSkirstymasPagalVidurki();
 #endif
