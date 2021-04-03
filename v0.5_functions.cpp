@@ -1,16 +1,23 @@
-#include "v0.3.hpp"
+#include "v0.5.hpp"
 
 vector<Studentas> Studentai; // studentu struktura vektoriuose
 vector<Studentas> Kietuoliai;
 vector<Studentas> Vargsiukai;
+list<Studentas> Studentai1; // studentu struktura listuose
+list<Studentas> Kietuoliai1;
+list<Studentas> Vargsiukai1;
+deque<Studentas> Studentai2; // studentu struktura dequose
+deque<Studentas> Kietuoliai2;
+deque<Studentas> Vargsiukai2;
 string ats;           // ar norite patys ivesti duomenis?
 string ats1;          // ar norite itraukti dar viena studenta?
 string ats2;          // ar norite generuoti atsitiktines pazymiu reiksmes?
-string ats3;          // ar norite matyti medianas?
 int nd;               // namu darbu skaicius
 int k = 0;            // studentu skaicius
 int x = 0;            // laikinas studento pazymiu nuskaitymo skaitliukas
 vector<int> pazymiai; // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
+list<int> pazymiai1;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
+deque<int> pazymiai2;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
 string FailoPavadinimas;
 string ats4;
 string ats5;
@@ -18,17 +25,8 @@ int z;
 int v;
 int vsum = 0; // vargsiuku suma
 int ksum = 0; // kieteku suma
+int konteineris;
 
-double MedianosRadimas(vector<int> &pazymiai)
-{
-    sort(pazymiai.begin(), pazymiai.end());
-
-    if (pazymiai.size() % 2 != 0)
-    {
-        return (double)pazymiai[pazymiai.size() / 2];
-    }
-    return (double)(pazymiai[(pazymiai.size() - 1) / 2] + pazymiai[pazymiai.size() / 2]) / 2.0;
-}
 void ZinomasDuomenuSkaicius()
 {
     random_device rd;
@@ -74,7 +72,6 @@ void ZinomasDuomenuSkaicius()
                 pazymiai.push_back(x);
             }
             Studentai[i].egz = dist(mt); // sugeneruoja random skaiciu nuo 1 iki 10
-            Studentai[i].medianos = (MedianosRadimas(pazymiai));
         }
     }
     if (ats2 == "Ne")
@@ -112,7 +109,6 @@ void ZinomasDuomenuSkaicius()
                 }
                 Studentai[i].ndsum += x;
             }
-            Studentai[i].medianos = (MedianosRadimas(pazymiai));
             cout << "Iveskite egzamino rezultata: ";
             double y;
             cin >> y;
@@ -169,7 +165,6 @@ void NezinomasDuomenuSkaicius()
                 Studentai[i].ndsum += x;
                 pazymiai.push_back(x);
             }
-            Studentai[i].medianos = (MedianosRadimas(pazymiai));
             Studentai[i].egz = dist(mt); // sugeneruoja random skaiciu nuo 1 iki 10
             k++;
             cout << "Ar norite itraukti dar viena studenta? (Taip/Ne) ";
@@ -218,7 +213,6 @@ void NezinomasDuomenuSkaicius()
                 }
                 Studentai[i].ndsum += x;
             }
-            Studentai[i].medianos = (MedianosRadimas(pazymiai));
             cout << "Iveskite egzamino rezultata: ";
             double egzaminorez;
             cin >> egzaminorez;
@@ -269,22 +263,22 @@ void DuomenysIsFailo()
         }
         for (int i = 0; !in.eof(); i++)
         {
-            Studentai.push_back(Studentas());
-            in >> Studentai[i].vardas;
-            in >> Studentai[i].pavarde;
-            Studentai[i].ndsum = 0;
+            Studentas temporary;
+            in >> temporary.vardas;
+            in >> temporary.pavarde;
+            temporary.ndsum = 0;
             pazymiai.clear();
             for (int j = 0; j < nd; j++)
             {
                 in >> y;
                 pazymiai.push_back(y);
-                Studentai[i].ndsum += y;
+                temporary.ndsum += y;
             }
-            Studentai[i].medianos = (MedianosRadimas(pazymiai));
             double egzaminorez;
             in >> egzaminorez;
-            Studentai[i].egz = egzaminorez;
+            temporary.egz = egzaminorez;
             k++; // studentu skaicius
+            Studentai.push_back(temporary);
         }
         in.close();
     }
@@ -294,20 +288,95 @@ void DuomenysIsFailo()
         exit(1);
     }
 }
-void StudentuSkirstymasPagalMediana()
+void DuomenysIsFailo1()
 {
-    for (int i = 0; i < z; i++)
+    try
     {
-        if (Studentai[i].medianos * 0.4 + Studentai[i].egz * 0.6 >= 5){
-            Kietuoliai.push_back(Studentai[i]);
-            ksum++;
+        ifstream in(FailoPavadinimas);
+        in.exceptions(ifstream::failbit | ifstream::badbit);
+        string x; // nustatyti nd skaiciu
+        int y;
+        for (int i = 0; i < 1000; i++)
+        {
+            in >> x;
+            if (x == "Egz.")
+            {
+                nd = i - 2;
+                break;
+            }
         }
-        else{
-            Vargsiukai.push_back(Studentai[i]);
-            vsum++;
+        for (int i = 0; !in.eof(); i++)
+        {
+            Studentas temporary;
+            in >> temporary.vardas;
+            in >> temporary.pavarde;
+            temporary.ndsum = 0;
+            pazymiai1.clear();
+            for (int j = 0; j < nd; j++)
+            {
+                in >> y;
+                pazymiai1.push_back(y);
+                temporary.ndsum += y;
+            }
+            double egzaminorez;
+            in >> egzaminorez;
+            temporary.egz = egzaminorez;
+            k++; // studentu skaicius
+            Studentai1.push_back(temporary);
         }
+        in.close();
+    }
+    catch (exception ex)
+    {
+        cout << "Toks failas neegzistuoja!" << endl;
+        exit(1);
     }
 }
+void DuomenysIsFailo2()
+{
+    try
+    {
+        ifstream in(FailoPavadinimas);
+        in.exceptions(ifstream::failbit | ifstream::badbit);
+        string x; // nustatyti nd skaiciu
+        int y;
+        for (int i = 0; i < 1000; i++)
+        {
+            in >> x;
+            if (x == "Egz.")
+            {
+                nd = i - 2;
+                break;
+            }
+        }
+        for (int i = 0; !in.eof(); i++)
+        {
+            Studentas temporary;
+            in >> temporary.vardas;
+            in >> temporary.pavarde;
+            temporary.ndsum = 0;
+            pazymiai2.clear();
+            for (int j = 0; j < nd; j++)
+            {
+                in >> y;
+                pazymiai2.push_back(y);
+                temporary.ndsum += y;
+            }
+            double egzaminorez;
+            in >> egzaminorez;
+            temporary.egz = egzaminorez;
+            k++; // studentu skaicius
+            Studentai2.push_back(temporary);
+        }
+        in.close();
+    }
+    catch (exception ex)
+    {
+        cout << "Toks failas neegzistuoja!" << endl;
+        exit(1);
+    }
+}
+
 void StudentuSkirstymasPagalVidurki()
 {
     for (int i = 0; i < z; i++)
@@ -320,6 +389,36 @@ void StudentuSkirstymasPagalVidurki()
             Vargsiukai.push_back(Studentai[i]);
             vsum++;
         }
+    }
+}
+void StudentuSkirstymasPagalVidurki1()
+{
+    for (int i = 0; i < z; i++)
+    {
+        if (((Studentai1.back().ndsum / nd) * 0.4) + Studentai1.back().egz * 0.6 >= 5){
+            Kietuoliai1.push_back(Studentai1.back());
+            ksum++;
+        }
+        else{
+            Vargsiukai1.push_back(Studentai1.back());
+            vsum++;
+        }
+        Studentai1.pop_back();
+    }
+}
+void StudentuSkirstymasPagalVidurki2()
+{
+    for (int i = 0; i < z; i++)
+    {
+        if (((Studentai2.back().ndsum / nd) * 0.4) + Studentai2.back().egz * 0.6 >= 5){
+            Kietuoliai2.push_back(Studentai2.back());
+            ksum++;
+        }
+        else{
+            Vargsiukai2.push_back(Studentai2.back());
+            vsum++;
+        }
+        Studentai2.pop_back();
     }
 }
 void Generavimas(int z, int v)

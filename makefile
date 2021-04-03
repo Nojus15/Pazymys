@@ -1,6 +1,6 @@
-main : v0.3_functions.o
-	c++ v0.3.cpp v0.3_functions.o -o Output
+main : v0.5_functions.o
+	c++ v0.5.cpp v0.5_functions.o -o Output
 compile :
-	c++ -c v0.3_functions.cpp
+	c++ -c v0.5_functions.cpp
 clean :
 	del *.o *.exe
