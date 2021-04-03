@@ -101,3 +101,42 @@ Norint pasinaudoti šia programa, Jums reikia parsisiųsti failus v0.4.cpp, v0.4
 (Pažymių mediana sudaroma vadovaujantis šia formule: mediana = 0.4 * pažymių mediana + 0.6 * egzaminas)<br>
 ### Pasirinkus šiuos nustatymus matysite sudarytą lentelę su studentu pavardėmis, vardais ir pažymių vidurkiais ir/arba medianomis.
 
+### V0.5
+### Kaip paleisti programą?<br>
+Versijoje [v0.5](https://github.com/domastyd/Pazymys/releases/tag/v0.5) atsirado galimybė pasirinkti kokių tipų konteinerius naudoti programoje (Vektoriai, listai, deqai), tačiau išnyko galimybė matyti studentų pažymių medianas.
+Norint pasinaudoti šia programa, Jums reikia parsisiųsti failus v0.5.cpp, v0.5_functions.cpp, v0.5.hpp ir makefile. Taip pat įsikelti txt duomenų failą kartu su visais parsisiųstais failais (Jeigu norėsite naudoti savo failą) ir įsijungti terminal. Su komanda cd nueiti iki savo aplankalo, kuriame yra visi parsisiųsti failai ir įrašyti "mingw32-make main" komandą ir kai programa bus sukompiliuota, įrašyti "Output.cpp" arba "./Output.exe".
+
+### Paleidus programą Jums reikės:<br>
+- Pasirinkti kokio tipo konteinerius norėsite naudoti programoje.
+- Pasirinkti ar norite automatiškai generuoti failus.
+- Jeigu pasirenkate automatiškai generuoti failus, turite įvesti norimą studentų ir jų namų darbų skaičių.
+- Atlikus šiuos žingsnius, galite pasirinkti studentų suskirstymą į vargšiukus ir kietuolius pagal galutinio pažymio vidurkį. (Studentai, kurių galutinis pažymys yra <=5 yra laikomi kietuoliais, kitais atvejais, vargšiukais) Galutinis vidurkis skaiciuojamas pagal šia formulę:  galutinis = 0.4 * vidurkis + 0.6 * egzaminas.
+- Atlikus šiuos žingsnius, Jums bus sukurti du txt failai ir terminale parodyta programos veikimo informacija.
+
+## Programos veikimo greičio analyzė
+
+Programos spartai ištirti buvo naudojami skirtingi konteineriai ir skirtingų dydžių failai. Spartos analizės buvo naudotas kompiuteris su šiais parametrais:
+
+- Intel Core i5-9300H 2.60GHz procesorius
+- 8 GB RAM
+- 1 TB M.2 SSD
+0.028s	0.09s	0.932s	9.78s	88.13s
+### Duomenų nuskaitymas iš failų
+| Students       | 1000     | 10.000   | 100.000    | 1.000.000   | 10.000.000  |
+| :----------    | :--------| :------  | :--------- | :---------- | :---------- |
+| Vector         | 0.00009s | 0.00489s | 0.35859s   | 0.04592s    | 1.58963s    |
+| List           | 0.028s   | 0.09s    | 0.932s     | 0.932s      | 88.15s      |
+| Deque          | 0.012s   | 0.08s    | 0.895s     | 9.5s        | 91.65s      |
+### Studentų suskirstymas į naujus du failus
+| Students       | 1000     | 10.000   | 100.000    | 1.000.000   | 10.000.000  |
+| :----------    | :------- | :------- | :--------- | :---------- | :---------- |
+| Vector         | 0.01690s | 0.06669s | 0.81663s   | 6.36548s    | 34.0576s    |
+| List           | 0.02325s | 0.00689s | 0.05859s   | 0.62592s    | 16.8963s    |
+| Deque          | 0.01256s | 0.00489s | 0.04126s   | 0.05592s    | 16.5893s    |
+
+---
+
+(Pažymių vidurkis sudaromis vadovaujantis šia formule: galutinis = 0.4 * vidurkis + 0.6 * egzaminas)<br>
+### Pasirinkus šiuos nustatymus matysite tekstiniuose failusoe sudarytą lentelę su studentu pavardėmis, vardais ir pažymių vidurkiais
+
+
