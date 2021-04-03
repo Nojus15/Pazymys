@@ -137,6 +137,6 @@ Programos spartai ištirti buvo naudojami skirtingi konteineriai ir skirtingų d
 ---
 
 (Pažymių vidurkis sudaromis vadovaujantis šia formule: galutinis = 0.4 * vidurkis + 0.6 * egzaminas)<br>
-### Pasirinkus šiuos nustatymus matysite tekstiniuose failusoe sudarytą lentelę su studentu pavardėmis, vardais ir pažymių vidurkiais
+### Pasirinkus šiuos nustatymus matysite tekstiniuose failusoe sudarytą lentelę su studentu pavardėmis, vardais ir pažymių vidurkiais.
 
 
