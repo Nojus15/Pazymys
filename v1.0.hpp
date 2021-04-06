@@ -1,5 +1,5 @@
-#ifndef V03_HPP
-#define v03_HPP
+#ifndef V10_HPP
+#define v10_HPP
 #pragma once
 #include <iostream>
 #include <fstream>
@@ -11,6 +11,7 @@
 #include <chrono>
 #include <list>
 #include <deque>
+#include <cctype>
 
 using namespace std;
 using namespace chrono;
@@ -53,6 +54,7 @@ extern int v;
 extern int vsum; // vargsiuku suma
 extern int ksum; // kieteku suma
 extern int konteineris;
+extern int rusiavimas;
 
 void ZinomasDuomenuSkaicius();
 void NezinomasDuomenuSkaicius();
@@ -63,5 +65,9 @@ void Generavimas(int z, int v);
 void StudentuSkirstymasPagalVidurki();
 void StudentuSkirstymasPagalVidurki1();
 void StudentuSkirstymasPagalVidurki2();
+void StudentuSkirstymasPagalVidurki3();
+void StudentuSkirstymasPagalVidurki4();
+void StudentuSkirstymasPagalVidurki5();
+bool DaugiauNei4(int sk);
 
 #endif

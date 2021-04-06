@@ -1,4 +1,4 @@
-#include "v0.5.hpp"
+#include "v1.0.hpp"
 
 vector<Studentas> Studentai; // studentu struktura vektoriuose
 vector<Studentas> Kietuoliai;
@@ -26,6 +26,7 @@ int v;
 int vsum = 0; // vargsiuku suma
 int ksum = 0; // kieteku suma
 int konteineris;
+int rusiavimas;
 
 void ZinomasDuomenuSkaicius()
 {
@@ -267,7 +268,6 @@ void DuomenysIsFailo()
             in >> temporary.vardas;
             in >> temporary.pavarde;
             temporary.ndsum = 0;
-            pazymiai.clear();
             for (int j = 0; j < nd; j++)
             {
                 in >> y;
@@ -311,7 +311,6 @@ void DuomenysIsFailo1()
             in >> temporary.vardas;
             in >> temporary.pavarde;
             temporary.ndsum = 0;
-            pazymiai1.clear();
             for (int j = 0; j < nd; j++)
             {
                 in >> y;
@@ -355,7 +354,6 @@ void DuomenysIsFailo2()
             in >> temporary.vardas;
             in >> temporary.pavarde;
             temporary.ndsum = 0;
-            pazymiai2.clear();
             for (int j = 0; j < nd; j++)
             {
                 in >> y;
@@ -419,6 +417,33 @@ void StudentuSkirstymasPagalVidurki2()
             vsum++;
         }
         Studentai2.pop_back();
+    }
+}
+bool DaugiauNei4(Studentas st){
+    return (((st.ndsum / nd) * 0.4) + st.egz * 0.6) > 4;
+}
+void StudentuSkirstymasPagalVidurki3() // Kietuoliai palieka Studentu masyve 
+{
+    for (int i = 0; i < z; i++)
+    {
+        Studentai.erase(remove_copy_if(Studentai.begin(), Studentai.end(), Vargsiukai.begin(), DaugiauNei4));
+        remove_if(Studentai.begin(), Studentai.end(), DaugiauNei4);
+    }
+}
+void StudentuSkirstymasPagalVidurki4() // Kietuoliai palieka Studentu masyve 
+{
+    for (int i = 0; i < z; i++)
+    {
+        remove_copy_if(Studentai1.begin(), Studentai1.end(), Vargsiukai1.begin(), DaugiauNei4);
+        remove_if(Studentai.begin(), Studentai.end(), DaugiauNei4);
+    }
+}
+void StudentuSkirstymasPagalVidurki5() // Kietuoliai palieka Studentu masyve 
+{
+     for (int i = 0; i < z; i++)
+    {
+        remove_copy_if(Studentai2.begin(), Studentai2.end(), Vargsiukai2.begin(), DaugiauNei4);
+        remove_if(Studentai.begin(), Studentai.end(), DaugiauNei4);
     }
 }
 void Generavimas(int z, int v)
