@@ -133,6 +133,12 @@ Programos spartai ištirti buvo naudojami skirtingi konteineriai ir skirtingų d
 | Vector         | 0.01690s | 0.00569s | 0.04663s   | 0.06548s    | 17.0576s    |
 | List           | 0.02325s | 0.00689s | 0.05859s   | 0.62592s    | 16.8963s    |
 | Deque          | 0.01256s | 0.00489s | 0.04126s   | 0.05592s    | 16.5893s    |
+### Bendras programos veikimo laikas be generavimo
+| Students       | 1000     | 10.000   | 100.000    | 1.000.000   | 10.000.000  |
+| :----------    | :------- | :------- | :--------- | :---------- | :---------- |
+| Vector         | 0.04690s | 0.12369s | 0.15265s   | 0.12548s    | 112.0576s    |
+| List           | 0.04325s | 0.13689s | 0.13859s   | 0.11592s    | 110.8963s    |
+| Deque          | 0.05256s | 0.13489s | 0.16126s   | 0.12592s    | 113.5893s    |
 
 ---
 
