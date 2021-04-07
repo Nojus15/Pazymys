@@ -434,8 +434,8 @@ void StudentuSkirstymasPagalVidurki4() // Kietuoliai palieka Studentu masyve
 {
     for (int i = 0; i < z; i++)
     {
-        remove_copy_if(Studentai1.begin(), Studentai1.end(), Vargsiukai1.begin(), DaugiauNei4);
-        remove_if(Studentai.begin(), Studentai.end(), DaugiauNei4);
+        Vargsiukai1 = remove_copy_if(Studentai1.begin(), Studentai1.end(), Vargsiukai1.begin(), Daugiaunei4(Studentai1));
+        Kietuoliai1.remove_if(DaugiauNei4(Studentai1));
     }
 }
 void StudentuSkirstymasPagalVidurki5() // Kietuoliai palieka Studentu masyve 
