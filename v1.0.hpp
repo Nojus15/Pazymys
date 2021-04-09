@@ -55,6 +55,7 @@ extern int vsum; // vargsiuku suma
 extern int ksum; // kieteku suma
 extern int konteineris;
 extern int rusiavimas;
+extern int Paz;
 
 void ZinomasDuomenuSkaicius();
 void NezinomasDuomenuSkaicius();
@@ -68,6 +69,7 @@ void StudentuSkirstymasPagalVidurki2();
 void StudentuSkirstymasPagalVidurki3();
 void StudentuSkirstymasPagalVidurki4();
 void StudentuSkirstymasPagalVidurki5();
-bool DaugiauNei4(int sk);
+bool PazymiaiMaziauNei5(double);
+bool MaziauNei4(Studentas);
 
 #endif

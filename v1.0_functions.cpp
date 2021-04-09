@@ -27,6 +27,7 @@ int vsum = 0; // vargsiuku suma
 int ksum = 0; // kieteku suma
 int konteineris;
 int rusiavimas;
+int Paz;
 
 void ZinomasDuomenuSkaicius()
 {
@@ -419,32 +420,32 @@ void StudentuSkirstymasPagalVidurki2()
         Studentai2.pop_back();
     }
 }
-bool DaugiauNei4(Studentas st){
-    return (((st.ndsum / nd) * 0.4) + st.egz * 0.6) > 4;
+bool PazymiaiMaziauNei5(double Paz){
+    return (Paz < 5);
 }
+bool MaziauNei5(Studentas Studentai){
+    return (((Studentai.ndsum / nd) * 0.4) + Studentai.egz * 0.6) < 5;
+}
+
 void StudentuSkirstymasPagalVidurki3() // Kietuoliai palieka Studentu masyve 
-{
-    for (int i = 0; i < z; i++)
-    {
-        Studentai.erase(remove_copy_if(Studentai.begin(), Studentai.end(), Vargsiukai.begin(), DaugiauNei4));
-        remove_if(Studentai.begin(), Studentai.end(), DaugiauNei4);
-    }
+{     
+    copy_if(Studentai.begin(), Studentai.end(), back_inserter(Vargsiukai), MaziauNei5);
+    remove_if(Studentai.begin(), Studentai.end(), MaziauNei5);
+    remove_if(pazymiai.begin(), pazymiai.end(), PazymiaiMaziauNei5);
+    
 }
 void StudentuSkirstymasPagalVidurki4() // Kietuoliai palieka Studentu masyve 
-{
-    for (int i = 0; i < z; i++)
-    {
-        Vargsiukai1 = remove_copy_if(Studentai1.begin(), Studentai1.end(), Vargsiukai1.begin(), Daugiaunei4(Studentai1));
-        Kietuoliai1.remove_if(DaugiauNei4(Studentai1));
-    }
+{        
+    copy_if(Studentai1.begin(), Studentai1.end(), back_inserter(Vargsiukai1), MaziauNei5);
+    remove_if(Studentai1.begin(), Studentai1.end(), MaziauNei5);
+    remove_if(pazymiai1.begin(), pazymiai1.end(), PazymiaiMaziauNei5);
 }
 void StudentuSkirstymasPagalVidurki5() // Kietuoliai palieka Studentu masyve 
 {
-     for (int i = 0; i < z; i++)
-    {
-        remove_copy_if(Studentai2.begin(), Studentai2.end(), Vargsiukai2.begin(), DaugiauNei4);
-        remove_if(Studentai.begin(), Studentai.end(), DaugiauNei4);
-    }
+    copy_if(Studentai2.begin(), Studentai2.end(), back_inserter(Vargsiukai2), MaziauNei5);
+    remove_if(Studentai2.begin(), Studentai2.end(), MaziauNei5);
+    for (int i = 0; i < z; i++)
+    pazymiai2.pop_front();
 }
 void Generavimas(int z, int v)
 {

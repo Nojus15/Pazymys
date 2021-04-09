@@ -569,7 +569,7 @@ int main()
             DuomenysIsFailo2();
             auto end6 = system_clock::now();
             duration<double> diff6 = end6 - start6;
-            Studentai2.sort();
+            sort(Studentai2.begin(), Studentai2.end());
             cout << "Studentai suskirstyti pagal vidurki." << endl;
             ofstream out("vargsiukai.txt");
             ofstream out1("kietuoliai.txt");
@@ -578,8 +578,8 @@ int main()
             StudentuSkirstymasPagalVidurki2();
             auto end7 = system_clock::now();
             duration<double> diff7 = end7 - start7;
-            Kietuoliai2.sort();
-            Vargsiukai2.sort();
+            sort(Kietuoliai2.begin(), Kietuoliai2.end());
+            sort(Vargsiukai2.begin(), Vargsiukai2.end());
             auto start8 = system_clock::now();
             out << "Pavarde             "
                 << "Vardas              "
@@ -637,4 +637,5 @@ int main()
         }
         }
     return 0;
+}
 }

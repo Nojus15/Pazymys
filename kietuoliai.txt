@@ -1,63 +1,36 @@
 Pavarde             Vardas              Galutinis (Vid.) 
 --------------------------------------------------------------------------
+                                        6                  
+                                        6                  
+                                        6                  
+                                        5                  
+                                        5                  
+                                        5                  
+                                        8                  
+                                        6                  
+                                        5                  
+                                        7                  
+                                        6                  
+                                        6                  
+                                        7                  
+                                        5                  
+                                        6                  
+                                        5                  
+                                        5                  
+                                        8                  
+                                        5                  
+                                        5                  
+                                        5                  
+                                        9                  
+                                        5                  
 Pavarde0            Vardas0             5                  
 Pavarde1            Vardas1             7                  
 Pavarde10           Vardas10            5                  
 Pavarde100          Vardas100           5                  
-Pavarde101          Vardas101           6                  
-Pavarde102          Vardas102           7                  
-Pavarde104          Vardas104           5                  
-Pavarde107          Vardas107           6                  
 Pavarde11           Vardas11            7                  
-Pavarde112          Vardas112           6                  
-Pavarde113          Vardas113           7                  
-Pavarde118          Vardas118           7                  
-Pavarde120          Vardas120           6                  
-Pavarde122          Vardas122           5                  
-Pavarde123          Vardas123           5                  
-Pavarde124          Vardas124           7                  
-Pavarde126          Vardas126           7                  
-Pavarde129          Vardas129           5                  
 Pavarde13           Vardas13            5                  
-Pavarde130          Vardas130           7                  
-Pavarde131          Vardas131           7                  
-Pavarde132          Vardas132           5                  
-Pavarde134          Vardas134           7                  
-Pavarde135          Vardas135           7                  
-Pavarde136          Vardas136           7                  
-Pavarde137          Vardas137           5                  
 Pavarde14           Vardas14            7                  
-Pavarde141          Vardas141           5                  
-Pavarde142          Vardas142           7                  
-Pavarde148          Vardas148           5                  
-Pavarde151          Vardas151           7                  
-Pavarde152          Vardas152           6                  
-Pavarde153          Vardas153           8                  
-Pavarde154          Vardas154           5                  
-Pavarde156          Vardas156           5                  
-Pavarde158          Vardas158           5                  
-Pavarde159          Vardas159           6                  
 Pavarde16           Vardas16            5                  
-Pavarde160          Vardas160           5                  
-Pavarde164          Vardas164           5                  
-Pavarde165          Vardas165           6                  
-Pavarde167          Vardas167           6                  
-Pavarde169          Vardas169           7                  
-Pavarde171          Vardas171           6                  
-Pavarde174          Vardas174           7                  
-Pavarde175          Vardas175           8                  
-Pavarde177          Vardas177           5                  
-Pavarde185          Vardas185           7                  
-Pavarde187          Vardas187           7                  
-Pavarde188          Vardas188           8                  
-Pavarde189          Vardas189           8                  
-Pavarde190          Vardas190           6                  
-Pavarde193          Vardas193           6                  
-Pavarde194          Vardas194           6                  
-Pavarde195          Vardas195           8                  
-Pavarde196          Vardas196           7                  
-Pavarde198          Vardas198           7                  
-Pavarde200          Vardas200           6                  
 Pavarde21           Vardas21            7                  
 Pavarde23           Vardas23            7                  
 Pavarde24           Vardas24            8                  
@@ -76,23 +49,5 @@ Pavarde48           Vardas48            5
 Pavarde49           Vardas49            6                  
 Pavarde50           Vardas50            6                  
 Pavarde51           Vardas51            6                  
-Pavarde56           Vardas56            5                  
-Pavarde57           Vardas57            5                  
-Pavarde58           Vardas58            5                  
-Pavarde59           Vardas59            8                  
-Pavarde6            Vardas6             6                  
-Pavarde63           Vardas63            5                  
-Pavarde64           Vardas64            7                  
-Pavarde69           Vardas69            6                  
-Pavarde7            Vardas7             6                  
-Pavarde71           Vardas71            7                  
-Pavarde72           Vardas72            6                  
-Pavarde78           Vardas78            5                  
-Pavarde80           Vardas80            6                  
-Pavarde85           Vardas85            5                  
-Pavarde89           Vardas89            5                  
-Pavarde9            Vardas9             8                  
-Pavarde91           Vardas91            5                  
-Pavarde93           Vardas93            5                  
-Pavarde94           Vardas94            5                  
-Pavarde95           Vardas95            9                  
+Pavarde52           Vardas52            2                  
+Pavarde53           Vardas53            3                  
