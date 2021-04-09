@@ -2,16 +2,15 @@
 #define v10_HPP
 #pragma once
 #include <iostream>
-#include <fstream>
 #include <iomanip>
+#include <string>
 #include <algorithm>
 #include <vector>
-#include <string>
 #include <random>
+#include <fstream>
 #include <chrono>
-#include <list>
 #include <deque>
-#include <cctype>
+#include <list>
 
 using namespace std;
 using namespace chrono;
@@ -22,6 +21,8 @@ struct Studentas
     string pavarde;  // string *pavarde = new string[100000];
     double egz;      // double *egz = new double[100000];
     double ndsum;    // namu darbu rezultatu sumadouble *ndsum = new double[100000]
+    vector<int> pazymiai;
+    int galutinis;
     bool operator<(Studentas A)
     {
         return vardas < A.vardas;
@@ -43,9 +44,9 @@ extern string ats2;                 // ar norite generuoti atsitiktines pazymiu 
 extern int nd;                      // namu darbu skaicius
 extern int k;             // studentu skaicius
 extern int x;                 // laikinas studento pazymiu nuskaitymo skaitliukas
-extern vector<int> pazymiai;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
-extern list<int> pazymiai1;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
-extern deque<int> pazymiai2;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
+//extern vector<int> pazymiai;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
+//extern list<int> pazymiai1;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
+//extern deque<int> pazymiai2;        // namu darbu rezultatu ir egzamino pazymiu masyvas skaiciuoti medianai
 extern string FailoPavadinimas;
 extern string ats4;
 extern string ats5;
@@ -56,6 +57,8 @@ extern int ksum; // kieteku suma
 extern int konteineris;
 extern int rusiavimas;
 
+template <typename T>
+void StudentuSkirstymasPagalVidurki3(T, T);
 void ZinomasDuomenuSkaicius();
 void NezinomasDuomenuSkaicius();
 void DuomenysIsFailo();
@@ -65,9 +68,9 @@ void Generavimas(int z, int v);
 void StudentuSkirstymasPagalVidurki();
 void StudentuSkirstymasPagalVidurki1();
 void StudentuSkirstymasPagalVidurki2();
-void StudentuSkirstymasPagalVidurki3();
-void StudentuSkirstymasPagalVidurki4();
-void StudentuSkirstymasPagalVidurki5();
-bool DaugiauNei4(int sk);
+//void StudentuSkirstymasPagalVidurki3(vector<int>&, vector<int>&);
+//void StudentuSkirstymasPagalVidurki4();
+//void StudentuSkirstymasPagalVidurki5();
+bool MaziauNei5(Studentas);
 
 #endif

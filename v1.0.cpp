@@ -1,5 +1,11 @@
 #include "v1.0.hpp"
 
+template <typename T>
+void StudentuSkirstymaspagalVidurki3(T A, T B){    
+    copy_if(A.begin(), A.end(), back_inserter(B), MaziauNei5);
+    remove_if(A.begin(), A.end(), MaziauNei5);   
+}
+
 int main()
 {
     cout << "Pasirinkite konteinerio tipa: [1] Vector [2] List [3] Deque " << endl;
@@ -52,7 +58,7 @@ int main()
             ofstream out1("kietuoliai.txt");
 
             auto start3 = system_clock::now();
-            StudentuSkirstymasPagalVidurki3();
+            StudentuSkirstymasPagalVidurki3(Studentai,Vargsiukai);
             auto end3 = system_clock::now();
             duration<double> diff3 = end3 - start3;
             sort(Studentai.begin(), Studentai.end());
@@ -62,19 +68,25 @@ int main()
                 << "Vardas              "
                 << "Galutinis (Vid.) " << endl;
             out << "--------------------------------------------------------------------------" << endl;
-            for (int i = 0; i < Vargsiukai.size(); i++)
+            /*for (int i = 0; i < Vargsiukai.size(); i++)
             {
                 out << setw(20) << left << Vargsiukai[i].pavarde << setw(20) << left << Vargsiukai[i].vardas << setw(19) << fixed << setprecision(0) << (int)(((Vargsiukai[i].ndsum / nd) * 0.4) + Vargsiukai[i].egz * 0.6) << endl;
             }
-
+            */
+            for (auto elem : Vargsiukai)
+                out <<fixed<<left<<setw(25)<< elem.vardas <<setw(25)<< elem.pavarde << elem.galutinis << endl;
             out1 << "Pavarde             "
                  << "Vardas              "
                  << "Galutinis (Vid.) " << endl;
             out1 << "--------------------------------------------------------------------------" << endl;
-            for (int i = 0; i < Studentai.size(); i++)
+            /*for (int i = 0; i < Studentai.size(); i++)
             {
                 out1 << setw(20) << left << Studentai[i].pavarde << setw(20) << left << Studentai[i].vardas << setw(19) << fixed << setprecision(0) << (int)(((Studentai[i].ndsum / nd) * 0.4) + Studentai[i].egz * 0.6) << endl;
             }
+            */
+            for (auto elem : Studentai)
+                out1 <<fixed<<left<<setw(25)<< elem.vardas <<setw(25)<< elem.pavarde << elem.galutinis <<  endl;
+
             auto end4 = system_clock::now();
             duration<double> diff4 = end4 - start4;
             cout << "Failo (studentai" + to_string(z) + ".txt) studentai buvo suskirstyti per:  " << diff3.count() << " sekundes" << endl;
@@ -257,7 +269,7 @@ int main()
             ofstream out1("kietuoliai.txt");
 
             auto start7 = system_clock::now();
-            StudentuSkirstymasPagalVidurki4();
+            StudentuSkirstymasPagalVidurki3(Studentai1,Vargsiukai1);
             auto end7 = system_clock::now();
             duration<double> diff7 = end7 - start7;
             Studentai1.sort();
@@ -472,7 +484,7 @@ int main()
             ofstream out1("kietuoliai.txt");
 
             auto start7 = system_clock::now();
-            StudentuSkirstymasPagalVidurki5();
+            StudentuSkirstymasPagalVidurki3(Studentai2,Vargsiukai2);
             auto end7 = system_clock::now();
             duration<double> diff7 = end7 - start7;
             sort(Studentai2.begin(), Studentai2.end());
@@ -569,7 +581,7 @@ int main()
             DuomenysIsFailo2();
             auto end6 = system_clock::now();
             duration<double> diff6 = end6 - start6;
-            Studentai2.sort();
+            sort(Studentai2.begin(), Studentai2.end());
             cout << "Studentai suskirstyti pagal vidurki." << endl;
             ofstream out("vargsiukai.txt");
             ofstream out1("kietuoliai.txt");
@@ -578,8 +590,8 @@ int main()
             StudentuSkirstymasPagalVidurki2();
             auto end7 = system_clock::now();
             duration<double> diff7 = end7 - start7;
-            Kietuoliai2.sort();
-            Vargsiukai2.sort();
+            sort(Kietuoliai2.begin(), Kietuoliai2.end());
+            sort(Vargsiukai2.begin(), Vargsiukai2.end());
             auto start8 = system_clock::now();
             out << "Pavarde             "
                 << "Vardas              "
@@ -637,4 +649,5 @@ int main()
         }
         }
     return 0;
+}
 }
