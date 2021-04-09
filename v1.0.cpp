@@ -1,7 +1,7 @@
 #include "v1.0.hpp"
 
 template <typename T>
-void StudentuSkirstymaspagalVidurki3(T A, T B){    
+void StudentuSkirstymasPagalVidurki3(T& A, T& B){    
     copy_if(A.begin(), A.end(), back_inserter(B), MaziauNei5);
     remove_if(A.begin(), A.end(), MaziauNei5);   
 }

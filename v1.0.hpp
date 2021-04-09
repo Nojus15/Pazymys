@@ -58,7 +58,7 @@ extern int konteineris;
 extern int rusiavimas;
 
 template <typename T>
-void StudentuSkirstymasPagalVidurki3(T, T);
+void StudentuSkirstymasPagalVidurki3(T&, T&);
 void ZinomasDuomenuSkaicius();
 void NezinomasDuomenuSkaicius();
 void DuomenysIsFailo();
