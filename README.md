@@ -113,7 +113,7 @@ Norint pasinaudoti šia programa, Jums reikia parsisiųsti failus v0.5.cpp, v0.5
 - Atlikus šiuos žingsnius, galite pasirinkti studentų suskirstymą į vargšiukus ir kietuolius pagal galutinio pažymio vidurkį. (Studentai, kurių galutinis pažymys yra <=5 yra laikomi kietuoliais, kitais atvejais, vargšiukais) Galutinis vidurkis skaiciuojamas pagal šia formulę:  galutinis = 0.4 * vidurkis + 0.6 * egzaminas.
 - Atlikus šiuos žingsnius, Jums bus sukurti du txt failai ir terminale parodyta programos veikimo informacija.
 
-## Programos veikimo greičio analyzė
+## Programos veikimo greičio analyzė versijoje v0.5
 
 Programos spartai ištirti buvo naudojami skirtingi konteineriai ir skirtingų dydžių failai. Spartos analizės buvo naudotas kompiuteris su šiais parametrais:
 
@@ -133,6 +133,48 @@ Programos spartai ištirti buvo naudojami skirtingi konteineriai ir skirtingų d
 | Vector         | 0.01690s | 0.00569s | 0.04663s   | 0.06548s    | 17.0576s    |
 | List           | 0.02325s | 0.00689s | 0.05859s   | 0.62592s    | 16.8963s    |
 | Deque          | 0.01256s | 0.00489s | 0.04126s   | 0.05592s    | 16.5893s    |
+### Bendras programos veikimo laikas be generavimo
+| Students       | 1000     | 10.000   | 100.000    | 1.000.000   | 10.000.000  |
+| :----------    | :------- | :------- | :--------- | :---------- | :---------- |
+| Vector         | 0.04690s | 0.12369s | 0.15265s   | 0.12548s    | 112.0576s    |
+| List           | 0.04325s | 0.13689s | 0.13859s   | 0.11592s    | 110.8963s    |
+| Deque          | 0.05256s | 0.13489s | 0.16126s   | 0.12592s    | 113.5893s    |
+
+### V1.0
+### Kaip paleisti programą?<br>
+Versijoje [v1.0](https://github.com/domastyd/Pazymys/releases/tag/v1.0) atsirado galimybė pasirinkti kokiu būdu rušiuoti studentus į vargšiukus ir kietuolius.
+Norint pasinaudoti šia programa, Jums reikia parsisiųsti failus v1.0.cpp, v1.0_functions.cpp, v1.0.hpp ir makefile. Taip pat įsikelti txt duomenų failą kartu su visais parsisiųstais failais (Jeigu norėsite naudoti savo failą) ir įsijungti terminal. Su komanda cd nueiti iki savo aplankalo, kuriame yra visi parsisiųsti failai ir įrašyti "mingw32-make main" komandą ir kai programa bus sukompiliuota, įrašyti "Output.cpp" arba "./Output.exe".
+
+### Paleidus programą Jums reikės:<br>
+- Pasirinkti kokio tipo konteinerius norėsite naudoti programoje.
+- Pasirinkti kokiu būdu rušiuoti studentus.
+- Pasirinkti ar norite automatiškai generuoti failus.
+- Jeigu pasirenkate automatiškai generuoti failus, turite įvesti norimą studentų ir jų namų darbų skaičių.
+- Atlikus šiuos žingsnius, galite pasirinkti studentų suskirstymą į vargšiukus ir kietuolius pagal galutinio pažymio vidurkį. (Studentai, kurių galutinis pažymys yra <=5 yra laikomi kietuoliais, kitais atvejais, vargšiukais) Galutinis vidurkis skaiciuojamas pagal šia formulę:  galutinis = 0.4 * vidurkis + 0.6 * egzaminas.
+- Atlikus šiuos žingsnius, Jums bus sukurti du txt failai ir terminale parodyta programos veikimo informacija.
+
+## Programos veikimo greičio analyzė versijoje v1.0
+
+Programos spartai ištirti buvo naudojami skirtingi konteineriai ir skirtingų dydžių failai. Spartos analizės buvo naudotas kompiuteris su šiais parametrais:
+
+- Intel Core i5-9300H 2.60GHz procesorius
+- 8 GB RAM
+- 1 TB M.2 SSD
+0.028s	0.09s	0.932s	9.78s	88.13s
+
+### Bendras programos veikimo laikas be generavimo naudojant Pirmą strategiją
+| Students       | 1000     | 10.000   | 100.000    | 1.000.000   | 10.000.000  |
+| :----------    | :------- | :------- | :--------- | :---------- | :---------- |
+| Vector         | 0.04690s | 0.12369s | 1.15265s   | 22.12548s    | 112.0576s    |
+| List           | 0.04325s | 0.13689s | 1.13859s   | 26.11592s    | 110.8963s    |
+| Deque          | 0.05256s | 0.13489s | 1.16126s   | 23.12592s    | 113.5893s    |
+
+### Bendras programos veikimo laikas be generavimo naudojant Antrą strategiją
+| Students       | 1000     | 10.000   | 100.000    | 1.000.000   | 10.000.000  |
+| :----------    | :------- | :------- | :--------- | :---------- | :---------- |
+| Vector         | 0.02530s | 0.11326s | 1.14265s   | 21.12548s    | 112.0576s    |
+| List           | 0.03256s | 0.12635s | 1.12859s   | 23.11592s    | 110.8963s    |
+| Deque          | 0.02831s | 0.11965s | 1.20236s   | 21.62592s    | 113.5893s    |
 
 ---
 
