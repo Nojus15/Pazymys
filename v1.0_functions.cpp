@@ -428,30 +428,22 @@ void StudentuSkirstymasPagalVidurki2()
         Studentai2.pop_back();
     }
 }
-bool MaziauNei5(Studentas st){
-    return st.galutinis < 5;
-}
-/*
-void StudentuSkirstymasPagalVidurki3(vector<int> & Studentai, vector<int> & Vargsiukai) // Kietuoliai palieka Studentu masyve 
+
+void StudentuSkirstymasPagalVidurki3(vector<Studentas> & Studentai, vector<Studentas> & Vargsiukai) // Kietuoliai palieka Studentu masyve 
 {
-        cout << Studentai.size() << endl;
-        copy_if(Studentai.begin(), Studentai.end(), back_inserter(Vargsiukai), MaziauNei5);
-        //vector<int>::iterator it = find_if (myvector.begin(), myvector.end(), MaziauNei5);
-        //remove_at();
-        remove_if(Studentai.begin(), Studentai.end(), MaziauNei5);
-        cout << Studentai.size() << endl;
+        copy_if(Studentai.begin(), Studentai.end(), back_inserter(Vargsiukai), [](Studentas x){return x.galutinis<5;});
+        Studentai.erase(remove_if(Studentai.begin(), Studentai.end(), [](Studentas x){return x.galutinis<5;}), Studentai.end());
 }
-void StudentuSkirstymasPagalVidurki4() // Kietuoliai palieka Studentu masyve 
+void StudentuSkirstymasPagalVidurki4(list<Studentas> & Studentai1, list<Studentas> & Vargsiukai1) // Kietuoliai palieka Studentu masyve 
 {
-        copy_if(Studentai1.begin(), Studentai1.end(), /*back_inserter(Vargsiukai1), MaziauNei5);
-        remove_if(Studentai1.begin(), Studentai1.end(), MaziauNei5);
+        copy_if(Studentai1.begin(), Studentai1.end(), back_inserter(Vargsiukai1), [](Studentas x){return x.galutinis<5;});
+        Studentai1.erase(remove_if(Studentai1.begin(), Studentai1.end(), [](Studentas x){return x.galutinis<5;}), Studentai1.end());
 }
-void StudentuSkirstymasPagalVidurki5() // Kietuoliai palieka Studentu masyve 
+void StudentuSkirstymasPagalVidurki5(deque<Studentas> & Studentai2, deque<Studentas> & Vargsiukai2) // Kietuoliai palieka Studentu masyve 
 {
-        copy_if(Studentai2.begin(), Studentai2.end(), /*back_inserter(Vargsiukai2), MaziauNei5);
-        remove_if(Studentai2.begin(), Studentai2.end(), MaziauNei5);
+        copy_if(Studentai2.begin(), Studentai2.end(), back_inserter(Vargsiukai2), [](Studentas x){return x.galutinis<5;});
+        Studentai2.erase(remove_if(Studentai2.begin(), Studentai2.end(), [](Studentas x){return x.galutinis<5;}), Studentai2.end());
 }
-*/
 void Generavimas(int z, int v)
 {
     random_device rd;

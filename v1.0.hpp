@@ -57,8 +57,8 @@ extern int ksum; // kieteku suma
 extern int konteineris;
 extern int rusiavimas;
 
-template <typename T>
-void StudentuSkirstymasPagalVidurki3(T&, T&);
+//template <typename T>
+//void StudentuSkirstymasPagalVidurki3(T&, T&);
 void ZinomasDuomenuSkaicius();
 void NezinomasDuomenuSkaicius();
 void DuomenysIsFailo();
@@ -68,9 +68,8 @@ void Generavimas(int z, int v);
 void StudentuSkirstymasPagalVidurki();
 void StudentuSkirstymasPagalVidurki1();
 void StudentuSkirstymasPagalVidurki2();
-//void StudentuSkirstymasPagalVidurki3(vector<int>&, vector<int>&);
-//void StudentuSkirstymasPagalVidurki4();
-//void StudentuSkirstymasPagalVidurki5();
-bool MaziauNei5(Studentas);
+void StudentuSkirstymasPagalVidurki3(vector<Studentas>&, vector<Studentas>&);
+void StudentuSkirstymasPagalVidurki4(list<Studentas>&, list<Studentas>&);
+void StudentuSkirstymasPagalVidurki5(deque<Studentas>& , deque<Studentas> &);
 
 #endif
