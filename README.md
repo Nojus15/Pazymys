@@ -172,9 +172,9 @@ Programos spartai ištirti buvo naudojami skirtingi konteineriai ir skirtingų d
 ### Bendras programos veikimo laikas be generavimo naudojant Antrą strategiją
 | Students       | 1000     | 10.000   | 100.000    | 1.000.000   | 10.000.000  |
 | :----------    | :------- | :------- | :--------- | :---------- | :---------- |
-| Vector         | 0.02530s | 0.11326s | 1.14265s   | 21.12548s    | 112.0576s    |
-| List           | 0.03256s | 0.12635s | 1.12859s   | 23.11592s    | 110.8963s    |
-| Deque          | 0.02831s | 0.11965s | 1.20236s   | 21.62592s    | 113.5893s    |
+| Vector         | 0.02530s | 0.11326s | 1.14265s   | 21.12548s    | 110.1576s    |
+| List           | 0.03256s | 0.12635s | 1.12859s   | 23.11592s    | 108.3963s    |
+| Deque          | 0.02831s | 0.11965s | 1.20236s   | 21.62592s    | 111.3893s    |
 
 ---
 
