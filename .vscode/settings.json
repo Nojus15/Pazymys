@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "iomanip": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp",
+        "string": "cpp",
+        "iterator": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "xloctime": "cpp",
+        "xstring": "cpp",
+        "random": "cpp",
+        "ios": "cpp",
+        "chrono": "cpp",
+        "list": "cpp",
+        "algorithm": "cpp",
+        "deque": "cpp",
+        "xmemory": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
