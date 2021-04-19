@@ -77,7 +77,7 @@ int main()
                 auto end4 = system_clock::now();
                 duration<double> diff4 = end4 - start4;
                 cout << "Failo (studentai" + to_string(z) + ".txt) studentai buvo suskirstyti per:  " << diff3.count() << " sekundes" << endl;
-                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiukai.txt) per:  " << diff4.count() << " sekundes" << endl;
+                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiuokai.txt) per:  " << diff4.count() << " sekundes" << endl;
                 cout << "Programos bendras veikimo laikas (Be generavimo): " << diff2.count() + diff3.count() + diff4.count() << " sekundes" << endl;
 
                 out.close();
@@ -177,7 +177,7 @@ int main()
                 auto end4 = system_clock::now();
                 duration<double> diff4 = end4 - start4;
                 cout << "Failo (studentai" + to_string(z) + ".txt) studentai buvo suskirstyti per:  " << diff3.count() << " sekundes" << endl;
-                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiukai.txt) per:  " << diff4.count() << " sekundes" << endl;
+                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiuokai.txt) per:  " << diff4.count() << " sekundes" << endl;
                 cout << "Programos bendras veikimo laikas (Be generavimo): " << diff2.count() + diff3.count() + diff4.count() << " sekundes" << endl;
 
                 out.close();
@@ -282,7 +282,7 @@ int main()
                 auto end8 = system_clock::now();
                 duration<double> diff8 = end8 - start8;
                 cout << "Failo (studentai" + to_string(z) + ".txt) studentai buvo suskirstyti per:  " << diff7.count() << " sekundes" << endl;
-                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiukai.txt) per:  " << diff8.count() << " sekundes" << endl;
+                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiuokai.txt) per:  " << diff8.count() << " sekundes" << endl;
                 cout << "Programos bendras veikimo laikas (Be generavimo): " << diff6.count() + diff7.count() + diff8.count() << " sekundes" << endl;
 
                 out.close();
@@ -387,7 +387,7 @@ int main()
                 auto end8 = system_clock::now();
                 duration<double> diff8 = end8 - start8;
                 cout << "Failo (studentai" + to_string(z) + ".txt) studentai buvo suskirstyti per:  " << diff7.count() << " sekundes" << endl;
-                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiukai.txt) per:  " << diff8.count() << " sekundes" << endl;
+                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiuokai.txt) per:  " << diff8.count() << " sekundes" << endl;
                 cout << "Programos bendras veikimo laikas (Be generavimo): " << diff6.count() + diff7.count() + diff8.count() << " sekundes" << endl;
 
                 out.close();
@@ -494,7 +494,7 @@ int main()
                 auto end8 = system_clock::now();
                 duration<double> diff8 = end8 - start8;
                 cout << "Failo (studentai" + to_string(z) + ".txt) studentai buvo suskirstyti per:  " << diff7.count() << " sekundes" << endl;
-                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiukai.txt) per:  " << diff8.count() << " sekundes" << endl;
+                cout << "Failo (studentai" + to_string(z) + ".txt) surusiuoti studentai buvo isvesti i naujus failus (kietuoliai.txt) ir (vargsiuokai.txt) per:  " << diff8.count() << " sekundes" << endl;
                 cout << "Programos bendras veikimo laikas (Be generavimo): " << diff6.count() + diff7.count() + diff8.count() << " sekundes" << endl;
 
                 out.close();
